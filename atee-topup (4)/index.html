@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ATEE TOPUP - บริการเติมเกมพรีเมียม 24 ชม.</title>
+    <meta name="description" content="ระบบเติมเกมอัตโนมัติ รวดเร็ว ปลอดภัย รองรับทุกอุปกรณ์ ด้วยดีไซน์ทันสมัย">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("HDB82Bm1Ej_oisoFZ");
+      })();
+    </script>
+    <style>
+      :root {
+        --smooth-curve: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      body {
+        font-family: 'Kanit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(135deg, #fdf2f8 0%, #f0f9ff 50%, #faf5ff 100%);
+        min-height: 100vh;
+        color: #334155;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+      }
+      
+      /* Advanced Animations */
+      @keyframes smoothFadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      @keyframes scan {
+        0% { top: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+      }
+
+      @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      .animate-fade-in { animation: smoothFadeIn 0.6s var(--smooth-curve) forwards; }
+      .animate-scale-in { animation: scaleIn 0.5s var(--smooth-curve) forwards; }
+      .animate-float { animation: float 4s ease-in-out infinite; }
+      .animate-marquee { display: inline-block; white-space: nowrap; animation: marquee 20s linear infinite; }
+      
+      .scanning-line {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, transparent, #3b82f6, transparent);
+        box-shadow: 0 0 15px #3b82f6;
+        animation: scan 2s linear infinite;
+        z-index: 10;
+      }
+
+      .shimmer-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        animation: shimmer 3s infinite;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .scroll-container {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none;
+      }
+
+      .rounded-pill { border-radius: 50px; }
+      .rounded-card { border-radius: 60px; }
+
+      @media (max-width: 640px) {
+        .rounded-card { border-radius: 40px; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "firebase/": "https://esm.sh/firebase@^12.8.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
