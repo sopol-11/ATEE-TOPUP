@@ -1,7 +1,0 @@
-{
-  "name": "ATEE TOPUP",
-  "description": "A modern game top-up and installment system with a pastel aesthetic and 50px rounded corners.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}
